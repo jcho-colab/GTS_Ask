@@ -100,7 +100,8 @@ const Sidebar = () => {
       <div className='flex-1 flex flex-col gap-y-5 py-8'>
         {sidebarLinks.map((link) => (
           <NavLink el={link} key={link.label} />
-        ))}n      </div>
+        ))}
+      </div>
 
       <div className=''>
         <button className='w-full flex gap-2 p-2 items-center text-lg text-gray-800 dark:text-white hover:text-amber-500'>
