@@ -1,4 +1,17 @@
 ### 
+Admin Account:
+
+    Email: admin@gtsask.com
+    Password: admin123
+    Features: Full access - can create tasks, manage users, view team, access trash, etc.
+
+User Account:
+
+    Email: user@gtsask.com
+    Password: user123
+    Features: Limited access - can view/update tasks assigned to them
+
+
 ## **Admin Features:**
 1. **User Management:**
     - Create admin accounts.
@@ -129,5 +142,6 @@ First, create the environment variables file `.env` in the client folder. The `.
 2. Run `npm i` or `npm install` to install the packages.
 3. Run `npm start` to run the app on `http://localhost:3000`.
 4. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
 
 
