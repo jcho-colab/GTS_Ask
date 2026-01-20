@@ -12,7 +12,7 @@ export default defineConfig({
     allowedHosts: [".emergentagent.com"],
     proxy: {
       "/api": {
-        target: "http://localhost:8800",
+        target: "http://localhost:8001",
         changeOrigin: true,
       },
     },
