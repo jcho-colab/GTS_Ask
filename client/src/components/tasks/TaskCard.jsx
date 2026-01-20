@@ -92,7 +92,7 @@ const TaskCard = ({ task }) => {
               <span className='text-sm text-gray-600 dark:text-gray-500'>
                 {formatDate(new Date(task?.subTasks[0]?.date))}
               </span>
-              <span className='bg-blue-600/10 px-3 py-1 rounded-full text-blue-700 font-medium'>
+              <span className='bg-amber-500/10 px-3 py-1 rounded-full text-amber-700 font-medium'>
                 {task?.subTasks[0]?.tag}
               </span>
             </div>
@@ -109,7 +109,7 @@ const TaskCard = ({ task }) => {
           <button
             disabled={user.isAdmin ? false : true}
             onClick={() => setOpen(true)}
-            className='w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled:text-gray-300'
+            className='w-full flex gap-4 items-center text-sm text-gray-500 font-semibold disabled:cursor-not-allowed disabled:text-gray-300 hover:text-amber-500 transition-colors'
           >
             <IoMdAdd className='text-lg' />
             <span>ADD SUBTASK</span>

@@ -183,7 +183,7 @@ const AddTask = ({ open, setOpen, task }) => {
               </div>
               <div className='w-full flex items-center justify-center mt-4'>
                 <label
-                  className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer my-4'
+                  className='flex items-center gap-1 text-base text-ascent-2 hover:text-amber-500 cursor-pointer my-4 transition-colors'
                   htmlFor='imgUpload'
                 >
                   <input
@@ -208,7 +208,7 @@ const AddTask = ({ open, setOpen, task }) => {
                 className='w-full bg-transparent px-3 py-1.5 2xl:py-3 border border-gray-300
             dark:border-gray-600 placeholder-gray-300 dark:placeholder-gray-700
             text-gray-900 dark:text-white outline-none text-base focus:ring-2
-            ring-blue-300'
+            ring-amber-400'
               ></textarea>
             </div>
 
@@ -225,7 +225,7 @@ const AddTask = ({ open, setOpen, task }) => {
                 className='w-full bg-transparent px-3 py-1.5 2xl:py-3 border border-gray-300
             dark:border-gray-600 placeholder-gray-300 dark:placeholder-gray-700
             text-gray-900 dark:text-white outline-none text-base focus:ring-2
-            ring-blue-300'
+            ring-amber-400'
               ></textarea>
             </div>
           </div>
@@ -239,7 +239,7 @@ const AddTask = ({ open, setOpen, task }) => {
               <Button
                 label='Submit'
                 type='submit'
-                className='bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto'
+                className='bg-black px-8 text-sm font-semibold text-white hover:bg-amber-500 sm:w-auto transition-colors'
               />
 
               <Button
