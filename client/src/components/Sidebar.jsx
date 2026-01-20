@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React from "react";
+import React, { useState } from "react";
 import { FaTasks, FaTrashAlt, FaUsers } from "react-icons/fa";
 import {
   MdDashboard,
@@ -12,6 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { setOpenSidebar } from "../redux/slices/authSlice";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import AddUser from "./AddUser";
+import ChangePassword from "./ChangePassword";
 
 const linkData = [
   {
@@ -58,6 +60,9 @@ const linkData = [
 
 const Sidebar = () => {
   const { user } = useSelector((state) => state.auth);
+  const [openProfile, setOpenProfile] = useState(false);
+  const [openPassword, setOpenPassword] = useState(false);
+  const [showSettingsMenu, setShowSettingsMenu] = useState(false);
 
   const dispatch = useDispatch();
   const location = useLocation();
@@ -85,31 +90,62 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='w-full h-full flex flex-col gap-6 p-5'>
-      <h1 className='flex gap-2 items-center'>
-        <img 
-          src="https://customer-assets.emergentagent.com/job_gts-ask/artifacts/vkqzttw5_BRP_inc_logo.svg.png" 
-          alt="GTS Ask Logo" 
-          className="w-10 h-10 object-contain"
-        />
-        <span className='text-2xl font-bold text-black dark:text-white'>
-          GTS <span className="text-amber-500">Ask</span>
-        </span>
-      </h1>
+    <>
+      <div className='w-full h-full flex flex-col gap-6 p-5'>
+        <h1 className='flex gap-2 items-center'>
+          <img 
+            src="https://customer-assets.emergentagent.com/job_gts-ask/artifacts/vkqzttw5_BRP_inc_logo.svg.png" 
+            alt="GTS Ask Logo" 
+            className="w-10 h-10 object-contain"
+          />
+          <span className='text-2xl font-bold text-black dark:text-white'>
+            GTS <span className="text-amber-500">Ask</span>
+          </span>
+        </h1>
 
-      <div className='flex-1 flex flex-col gap-y-5 py-8'>
-        {sidebarLinks.map((link) => (
-          <NavLink el={link} key={link.label} />
-        ))}
+        <div className='flex-1 flex flex-col gap-y-5 py-8'>
+          {sidebarLinks.map((link) => (
+            <NavLink el={link} key={link.label} />
+          ))}
+        </div>
+
+        <div className='relative'>
+          <button 
+            onClick={() => setShowSettingsMenu(!showSettingsMenu)}
+            className='w-full flex gap-2 p-2 items-center text-lg text-gray-800 dark:text-white hover:text-amber-500 transition-colors'
+          >
+            <MdSettings className={showSettingsMenu ? "animate-spin" : ""} />
+            <span>Settings</span>
+          </button>
+          
+          {showSettingsMenu && (
+            <div className='absolute bottom-full left-0 mb-2 w-full bg-white dark:bg-[#1f1f1f] rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden'>
+              <button
+                onClick={() => {
+                  setOpenProfile(true);
+                  setShowSettingsMenu(false);
+                }}
+                className='w-full px-4 py-3 text-left text-gray-700 dark:text-gray-300 hover:bg-amber-500/20 transition-colors flex items-center gap-2'
+              >
+                <span>Edit Profile</span>
+              </button>
+              <button
+                onClick={() => {
+                  setOpenPassword(true);
+                  setShowSettingsMenu(false);
+                }}
+                className='w-full px-4 py-3 text-left text-gray-700 dark:text-gray-300 hover:bg-amber-500/20 transition-colors flex items-center gap-2 border-t border-gray-100 dark:border-gray-700'
+              >
+                <span>Change Password</span>
+              </button>
+            </div>
+          )}
+        </div>
       </div>
 
-      <div className=''>
-        <button className='w-full flex gap-2 p-2 items-center text-lg text-gray-800 dark:text-white hover:text-amber-500'>
-          <MdSettings />
-          <span>Settings</span>
-        </button>
-      </div>
-    </div>
+      <AddUser open={openProfile} setOpen={setOpenProfile} userData={user} />
+      <ChangePassword open={openPassword} setOpen={setOpenPassword} />
+    </>
   );
 };
 
