@@ -20,7 +20,7 @@ export const Chart = ({ data }) => {
           contentStyle={{ textTransform: "capitalize" }}
         />
         <CartesianGrid strokeDasharray='3 3' />
-        <Bar dataKey='total' fill='#8884d8' />
+        <Bar dataKey='total' fill='#FBBF24' />
       </BarChart>
     </ResponsiveContainer>
   );

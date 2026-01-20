@@ -123,7 +123,7 @@ const Table = ({ tasks }) => {
 
       <td className='py-2 flex gap-2 md:gap-4 justify-end'>
         <Button
-          className='text-blue-600 hover:text-blue-500 sm:px-0 text-sm md:text-base'
+          className='text-amber-600 hover:text-amber-500 sm:px-0 text-sm md:text-base'
           label='Edit'
           type='button'
           onClick={() => editClickHandler(task)}
@@ -148,8 +148,7 @@ const Table = ({ tasks }) => {
             <tbody>
               {tasks.map((task, index) => (
                 <TableRow key={index} task={task} />
-              ))}
-            </tbody>
+              ))}n            </tbody>
           </table>
         </div>
       </div>

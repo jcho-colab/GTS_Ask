@@ -114,7 +114,7 @@ const AddUser = ({ open, setOpen, userData }) => {
             <div className='py-3 mt-4 sm:flex sm:flex-row-reverse'>
               <Button
                 type='submit'
-                className='bg-blue-600 px-8 text-sm font-semibold text-white hover:bg-blue-700  sm:w-auto'
+                className='bg-black px-8 text-sm font-semibold text-white hover:bg-amber-500 sm:w-auto transition-colors'
                 label='Submit'
               />
 

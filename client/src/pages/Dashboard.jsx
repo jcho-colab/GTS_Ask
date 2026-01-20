@@ -58,28 +58,28 @@ const Dashboard = () => {
       label: "TOTAL TASK",
       total: data?.totalTasks || 0,
       icon: <FaNewspaper />,
-      bg: "bg-[#1d4ed8]",
+      bg: "bg-black",
     },
     {
       _id: "2",
       label: "COMPLTED TASK",
       total: totals["completed"] || 0,
       icon: <MdAdminPanelSettings />,
-      bg: "bg-[#0f766e]",
+      bg: "bg-green-600",
     },
     {
       _id: "3",
       label: "TASK IN PROGRESS ",
       total: totals["in progress"] || 0,
       icon: <LuClipboardEdit />,
-      bg: "bg-[#f59e0b]",
+      bg: "bg-amber-500",
     },
     {
       _id: "4",
       label: "TODOS",
       total: totals["todo"],
       icon: <FaArrowsToDot />,
-      bg: "bg-[#be185d]" || 0,
+      bg: "bg-amber-600" || 0,
     },
   ];
 
@@ -124,7 +124,7 @@ const UserTable = ({ users }) => {
     <tr className='border-b border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-400/10'>
       <td className='py-2'>
         <div className='flex items-center gap-3'>
-          <div className='w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-violet-700'>
+          <div className='w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-black'>
             <span className='text-center'>{getInitials(user?.name)}</span>
           </div>
           <div>
@@ -138,7 +138,7 @@ const UserTable = ({ users }) => {
         <p
           className={clsx(
             "w-fit px-3 py-1 rounded-full text-sm",
-            user?.isActive ? "bg-blue-200" : "bg-yellow-100"
+            user?.isActive ? "bg-amber-200 text-amber-800" : "bg-gray-200 text-gray-700"
           )}
         >
           {user?.isActive ? "Active" : "Disabled"}
