@@ -9,7 +9,7 @@ const createJWT = (res, userId) => {
     httpOnly: true,
     secure: process.env.NODE_ENV !== "development", // Use secure cookies in production
     sameSite: process.env.NODE_ENV === "development" ? "lax" : "none",
-    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 days
+    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
   });
 };
 
