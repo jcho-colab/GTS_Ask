@@ -148,7 +148,8 @@ const Table = ({ tasks }) => {
             <tbody>
               {tasks.map((task, index) => (
                 <TableRow key={index} task={task} />
-              ))}n            </tbody>
+              ))}
+            </tbody>
           </table>
         </div>
       </div>
