@@ -92,8 +92,8 @@ const Dashboard = () => {
           ))}
         </div>
 
-        <div className='w-full bg-white my-16 p-4 rounded shadow-sm'>
-          <h4 className='text-xl text-gray-500 font-bold mb-2'>
+        <div className='w-full md:w-1/2 bg-white my-8 p-4 rounded shadow-sm'>
+          <h4 className='text-lg text-gray-500 font-bold mb-2'>
             Chart by Priority
           </h4>
           <Chart data={data?.graphData} />
