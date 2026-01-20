@@ -35,16 +35,16 @@ const Login = () => {
   }, [user]);
 
   return (
-    <div className='w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6] dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#302943] via-slate-900 to-black'>
+    <div className='w-full min-h-screen flex items-center justify-center flex-col lg:flex-row bg-[#f3f4f6] dark:bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1a1a] via-black to-black'>
       <div className='w-full md:w-auto flex gap-0 md:gap-40 flex-col md:flex-row items-center justify-center'>
         <div className='h-full w-full lg:w-2/3 flex flex-col items-center justify-center'>
           <div className='w-full md:max-w-lg 2xl:max-w-3xl flex flex-col items-center justify-center gap-5 md:gap-y-10 2xl:-mt-20'>
-            <span className='flex gap-1 py-1 px-3 border rounded-full text-sm md:text-base dark:border-gray-700 dark:text-blue-400 border-gray-300 text-gray-600'>
-              Manage all your task in one place!
+            <span className='flex gap-1 py-1 px-3 border rounded-full text-sm md:text-base dark:border-amber-500/50 dark:text-amber-400 border-gray-300 text-gray-600'>
+              Manage all your tasks in one place!
             </span>
-            <p className='flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center dark:text-gray-400 text-blue-700'>
-              <span>Cloud-based</span>
-              <span>Task Manager</span>
+            <p className='flex flex-col gap-0 md:gap-4 text-4xl md:text-6xl 2xl:text-7xl font-black text-center dark:text-gray-400 text-black'>
+              <span>GTS <span className="text-amber-500">Ask</span></span>
+              <span className="text-2xl md:text-3xl text-gray-600 dark:text-gray-500 font-semibold">Task Manager</span>
             </p>
 
             <div className='cell'>
@@ -56,14 +56,21 @@ const Login = () => {
         <div className='w-full md:w-1/3 p-4 md:p-1 flex flex-col justify-center items-center'>
           <form
             onSubmit={handleSubmit(handleLogin)}
-            className='form-container w-full md:w-[400px] flex flex-col gap-y-8 bg-white dark:bg-slate-900 px-10 pt-14 pb-14'
+            className='form-container w-full md:w-[400px] flex flex-col gap-y-8 bg-white dark:bg-[#1a1a1a] px-10 pt-14 pb-14 border-t-4 border-amber-500'
           >
             <div>
-              <p className='text-blue-600 text-3xl font-bold text-center'>
+              <div className="flex items-center justify-center mb-4">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_gts-ask/artifacts/vkqzttw5_BRP_inc_logo.svg.png" 
+                  alt="GTS Ask Logo" 
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+              <p className='text-black dark:text-amber-500 text-3xl font-bold text-center'>
                 Welcome back!
               </p>
               <p className='text-center text-base text-gray-700 dark:text-gray-500'>
-                Keep all your credetials safe!
+                Keep all your credentials safe!
               </p>
             </div>
             <div className='flex flex-col gap-y-5'>
@@ -89,7 +96,7 @@ const Login = () => {
                 })}
                 error={errors.password ? errors.password?.message : ""}
               />
-              <span className='text-sm text-gray-600 hover:underline cursor-pointer'>
+              <span className='text-sm text-gray-600 hover:text-amber-500 hover:underline cursor-pointer'>
                 Forget Password?
               </span>
             </div>
@@ -99,7 +106,7 @@ const Login = () => {
               <Button
                 type='submit'
                 label='Log in'
-                className='w-full h-10 bg-blue-700 text-white rounded-full'
+                className='w-full h-10 bg-black hover:bg-amber-500 text-white rounded-full transition-colors duration-300'
               />
             )}
           </form>
