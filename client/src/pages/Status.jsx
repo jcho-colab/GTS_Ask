@@ -30,7 +30,7 @@ const StatusPage = () => {
       <tr className='border-b border-gray-200 text-gray-600 hover:bg-gray-400/10'>
         <td className='p-2'>
           <div className='flex items-center gap-3'>
-            <div className='w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-blue-700'>
+            <div className='w-9 h-9 rounded-full text-white flex items-center justify-center text-sm bg-black'>
               <span className='text-xs md:text-sm text-center'>
                 {getInitials(user.name)}
               </span>
@@ -42,10 +42,10 @@ const StatusPage = () => {
         <td className='p-2'>
           {
             <div className='flex items-center gap-2 text-white text-sm'>
-              <p className='px-2 py-1 bg-blue-600 rounded'>
+              <p className='px-2 py-1 bg-black rounded'>
                 {(counts.inProgress * 100).toFixed(1)}%
               </p>
-              <p className='px-2 py-1 bg-amber-600 rounded'>
+              <p className='px-2 py-1 bg-amber-500 rounded'>
                 {(counts.todo * 100).toFixed(1)}%
               </p>
               <p className='px-2 py-1 bg-emerald-600 rounded'>

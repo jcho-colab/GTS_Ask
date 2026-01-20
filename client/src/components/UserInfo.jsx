@@ -24,7 +24,7 @@ export default function UserInfo({ user }) {
             >
               <Popover.Panel className='absolute left-1/2 z-10 mt-3 w-80 max-w-sm -translate-x-1/2 transform px-4 sm:px-0 '>
                 <div className='flex items-center gap-4 rounded-lg shadow-lg bg-white p-8'>
-                  <div className='w-16 h-16 bg-blue-600 rounded-full text-white flex items-center justify-center text-2xl '>
+                  <div className='w-16 h-16 bg-black rounded-full text-white flex items-center justify-center text-2xl '>
                     <span className='text-center font-bold'>
                       {getInitials(user?.name)}
                     </span>
@@ -34,7 +34,7 @@ export default function UserInfo({ user }) {
                     <span className='text-base text-gray-500'>
                       {user?.title}
                     </span>
-                    <span className='text-blue-500'>
+                    <span className='text-amber-500'>
                       {user?.email ?? "email@example.com"}
                     </span>
                   </div>
