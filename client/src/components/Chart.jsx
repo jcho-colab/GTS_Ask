@@ -14,6 +14,17 @@ export const Chart = ({ data }) => {
   // Transform data for pie chart if needed
   const chartData = data || [];
   
+  // Check if there's any data with values > 0
+  const hasData = chartData.some(item => item.total > 0);
+  
+  if (!hasData) {
+    return (
+      <div className="flex items-center justify-center h-[200px] text-gray-400">
+        <p>No task data available yet</p>
+      </div>
+    );
+  }
+  
   return (
     <ResponsiveContainer width={"100%"} height={200}>
       <PieChart>
