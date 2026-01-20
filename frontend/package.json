@@ -1,0 +1,7 @@
+{
+  "name": "gts-ask-frontend",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "cd ../client && yarn dev --host 0.0.0.0 --port 3000"
+  }
+}
