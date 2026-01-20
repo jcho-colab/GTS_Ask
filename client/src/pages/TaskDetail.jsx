@@ -43,8 +43,8 @@ const ICONS = {
 
 const bgColor = {
   high: "bg-red-200",
-  medium: "bg-yellow-200",
-  low: "bg-blue-200",
+  medium: "bg-amber-200",
+  low: "bg-green-200",
 };
 
 const TABS = [
@@ -59,7 +59,7 @@ const TASKTYPEICON = {
     </div>
   ),
   started: (
-    <div className='w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white'>
+    <div className='w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center text-white'>
       <FaThumbsUp size={20} />
     </div>
   ),
@@ -79,7 +79,7 @@ const TASKTYPEICON = {
     </div>
   ),
   "in progress": (
-    <div className='w-8 h-8 flex items-center justify-center rounded-full bg-violet-600 text-white'>
+    <div className='w-8 h-8 flex items-center justify-center rounded-full bg-black text-white'>
       <GrInProgress size={16} />
     </div>
   ),
@@ -167,7 +167,7 @@ const Activities = ({ activity, id, refetch }) => {
             <div key={item} className='flex gap-2 items-center'>
               <input
                 type='checkbox'
-                className='w-4 h-4'
+                className='w-4 h-4 accent-amber-500'
                 checked={selected === item ? true : false}
                 onChange={(e) => setSelected(item)}
               />
@@ -179,7 +179,7 @@ const Activities = ({ activity, id, refetch }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder='Type ......'
-            className='bg-white w-full mt-10 border border-gray-300 outline-none p-4 rounded-md focus:ring-2 ring-blue-500'
+            className='bg-white w-full mt-10 border border-gray-300 outline-none p-4 rounded-md focus:ring-2 ring-amber-400'
           ></textarea>
           {isLoading ? (
             <Loading />
@@ -188,7 +188,7 @@ const Activities = ({ activity, id, refetch }) => {
               type='button'
               label='Submit'
               onClick={handleSubmit}
-              className='bg-blue-600 text-white rounded'
+              className='bg-black hover:bg-amber-500 text-white rounded transition-colors'
             />
           )}
         </div>
@@ -290,7 +290,7 @@ const TaskDetail = () => {
                       >
                         <div
                           className={
-                            "w-10 h-10 rounded-full text-white flex items-center justify-center text-sm -mr-1 bg-blue-600"
+                            "w-10 h-10 rounded-full text-white flex items-center justify-center text-sm -mr-1 bg-black"
                           }
                         >
                           <span className='text-center'>
@@ -326,8 +326,8 @@ const TaskDetail = () => {
                     <div className='space-y-8'>
                       {task?.subTasks?.map((el, index) => (
                         <div key={index + el?._id} className='flex gap-3'>
-                          <div className='w-10 h-10 flex items-center justify-center rounded-full bg-violet-200'>
-                            <MdTaskAlt className='text-violet-600' size={26} />
+                          <div className='w-10 h-10 flex items-center justify-center rounded-full bg-amber-100'>
+                            <MdTaskAlt className='text-amber-600' size={26} />
                           </div>
 
                           <div className='space-y-1'>
@@ -336,7 +336,7 @@ const TaskDetail = () => {
                                 {new Date(el?.date).toDateString()}
                               </span>
 
-                              <span className='px-2 py-0.5 text-center text-sm rounded-full bg-violet-100 text-violet-700 font-semibold lowercase'>
+                              <span className='px-2 py-0.5 text-center text-sm rounded-full bg-amber-100 text-amber-700 font-semibold lowercase'>
                                 {el?.tag}
                               </span>
 
@@ -418,7 +418,7 @@ const TaskDetail = () => {
                           key={index}
                           href={el}
                           target='_blank'
-                          className='text-blue-600 hover:underline'
+                          className='text-amber-600 hover:underline'
                         >
                           {el}
                         </a>
