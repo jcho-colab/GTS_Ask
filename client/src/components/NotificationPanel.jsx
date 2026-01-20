@@ -13,10 +13,10 @@ import ViewNotification from "./ViewNotification";
 
 const ICONS = {
   alert: (
-    <HiBellAlert className='h-5 w-5 text-gray-600 group-hover:text-indigo-600' />
+    <HiBellAlert className='h-5 w-5 text-gray-600 group-hover:text-amber-500' />
   ),
   message: (
-    <BiSolidMessageRounded className='h-5 w-5 text-gray-600 group-hover:text-indigo-600' />
+    <BiSolidMessageRounded className='h-5 w-5 text-gray-600 group-hover:text-amber-500' />
   ),
 };
 
@@ -56,7 +56,7 @@ export default function NotificationPanel() {
           <div className='w-8 h-8 flex items-center justify-center text-gray-800 dark:text-white  relative'>
             <IoIosNotificationsOutline className='text-2xl' />
             {data?.length > 0 && (
-              <span className='absolute text-center top-0 right-1 text-sm text-white font-semibold w-4 h-4 rounded-full bg-red-600'>
+              <span className='absolute text-center top-0 right-1 text-sm text-white font-semibold w-4 h-4 rounded-full bg-amber-500'>
                 {data?.length}
               </span>
             )}
@@ -82,7 +82,7 @@ export default function NotificationPanel() {
                         key={item._id + index}
                         className='group relative flex gap-x-4 rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-[#1c1c1c]'
                       >
-                        <div className='mt-1 h-8 w-8 flex items-center justify-center rounded-lg bg-gray-200 group-hover:bg-white'>
+                        <div className='mt-1 h-8 w-8 flex items-center justify-center rounded-lg bg-gray-200 group-hover:bg-amber-100'>
                           {ICONS[item.notiType]}
                         </div>
 
@@ -111,7 +111,7 @@ export default function NotificationPanel() {
                         onClick={
                           item?.onClick ? () => item.onClick() : () => close()
                         }
-                        className='flex items-center justify-center gap-x-2.5 p-3 font-semibold text-blue-600 hover:bg-gray-100 dark:hover:bg-[#1c1c1c]'
+                        className='flex items-center justify-center gap-x-2.5 p-3 font-semibold text-amber-600 hover:bg-gray-100 dark:hover:bg-[#1c1c1c]'
                       >
                         {item.name}
                       </Link>

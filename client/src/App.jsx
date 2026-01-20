@@ -22,7 +22,7 @@ function Layout() {
 
   return user ? (
     <div className='w-full h-screen flex flex-col md:flex-row'>
-      <div className='w-1/5 h-screen bg-white dark:bg-[#1f1f1f] sticky top-0 hidden md:block'>
+      <div className='w-1/5 h-screen bg-white dark:bg-[#1f1f1f] sticky top-0 hidden md:block border-r border-gray-200'>
         <Sidebar />
       </div>
 
@@ -73,7 +73,7 @@ const MobileSidebar = () => {
               <div className='w-full flex justify-end px-5 pt-5'>
                 <button
                   onClick={() => closeSidebar()}
-                  className='flex justify-end items-end'
+                  className='flex justify-end items-end hover:text-amber-500 transition-colors'
                 >
                   <IoMdClose size={25} />
                 </button>
