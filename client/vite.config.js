@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     port: 3000,
     host: "0.0.0.0",
-    allowedHosts: "all",
+    allowedHosts: [".emergentagent.com", "localhost", "gts-ask.preview.emergentagent.com"],
     proxy: {
       "/api": {
         target: "http://localhost:8800",
